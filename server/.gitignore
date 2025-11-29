@@ -1,0 +1,9 @@
+# Ignoring the node-modules
+node_modules
+
+# Ignoring the environmental variables
+.env
+
+
+
+
