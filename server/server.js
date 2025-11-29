@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const {Employee} = require("../Database/db")
 const cors = require('cors');
 const axios = require('axios'); // To call Python
 require('dotenv').config();
@@ -7,22 +7,6 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-// 1. Connect to Mongo (Replace with your connection string)
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-
-// 2. Define Schema
-const EmployeeSchema = new mongoose.Schema({
-    name: String,
-    department: String,
-    gender: String,
-    performance_score: Number,
-    promoted: Number // 0 or 1
-});
-const Employee = mongoose.model('Employee', EmployeeSchema);
 
 // 3. SEED ROUTE (Call this once to fill DB with dummy data)
 app.post('/seed', async (req, res) => {
