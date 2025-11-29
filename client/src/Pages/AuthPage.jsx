@@ -85,7 +85,7 @@ const AuthPage = ({ onBack }) => {
                   <a href="#" className="text-sm text-blue-400 hover:text-blue-300">Forgot Password?</a>
                 </div>
 
-                <button className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all transform active:scale-95">
+                <button type="button" onClick = {Proportions.onLoginSuccess} className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all transform active:scale-95">
                   Sign In
                 </button>
               </form>
@@ -154,7 +154,7 @@ const AuthPage = ({ onBack }) => {
                   />
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all transform active:scale-95 flex items-center justify-center gap-2 mt-2">
+                <button className="w-full bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 rounded-xl shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all transform active:scale-95 flex items-center justify-center gap-2 mt-2">
                   Get Started <ArrowRight size={18} />
                 </button>
               </form>

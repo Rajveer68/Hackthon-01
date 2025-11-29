@@ -1,32 +1,56 @@
 import React, { useState } from 'react';
-import LandingPage from './Pages/LandingPage'; // Make sure filename matches
-import AuthPage from './Pages/AuthPage';       // Make sure filename matches
+import LandingPage from './Pages/LandingPage';
+import AuthPage from './Pages/AuthPage';
+import DashboardLayout from './Pages/DashboardLayout';
+import DashboardHome from './Pages/DashboardHome';
+import FairnessPage from './Pages/FairnessPage';
+import SkillsPage from './Pages/SkillsPage';
 
 function App() {
-  // State to toggle between pages: 'landing' or 'auth'
+  // View State: 'landing' | 'auth' | 'dashboard'
   const [currentView, setCurrentView] = useState('landing');
+  
+  // Dashboard Tab State: 'overview' | 'fairness' | 'skills'
+  const [activeTab, setActiveTab] = useState('overview');
 
-  // Function to switch to Auth Page
-  const handleGetStarted = () => {
-    setCurrentView('auth');
-  };
-
-  // Function to go back (Optional, helpful for UX)
-  const handleBackToHome = () => {
+  // --- NAVIGATION FUNCTIONS ---
+  const navigateToAuth = () => setCurrentView('auth');
+  const navigateToHome = () => setCurrentView('landing');
+  const navigateToDashboard = () => setCurrentView('dashboard');
+  
+  const handleLogout = () => {
     setCurrentView('landing');
+    setActiveTab('overview');
   };
 
+  // --- RENDER LOGIC ---
+
+  // 1. Show Landing Page
+  if (currentView === 'landing') {
+    return <LandingPage onNavigate={navigateToAuth} />;
+  }
+
+  // 2. Show Auth Page (Sign In / Sign Up)
+  if (currentView === 'auth') {
+    return (
+      <AuthPage 
+        onBack={navigateToHome} 
+        onLoginSuccess={navigateToDashboard} 
+      />
+    );
+  }
+
+  // 3. Show Dashboard (Protected Area)
   return (
-    <div>
-      {currentView === 'landing' ? (
-        // Pass the function down to LandingPage
-        
-        <LandingPage onGetStarted={handleGetStarted} />
-      ) : (
-        // Pass the function down to AuthPage
-        <AuthPage onBack={handleBackToHome} />
-      )}
-    </div>
+    <DashboardLayout 
+      activeTab={activeTab} 
+      onTabChange={setActiveTab} 
+      onLogout={handleLogout}
+    >
+      {activeTab === 'overview' && <DashboardHome />}
+      {activeTab === 'fairness' && <FairnessPage />}
+      {activeTab === 'skills' && <SkillsPage />}
+    </DashboardLayout>
   );
 }
 
