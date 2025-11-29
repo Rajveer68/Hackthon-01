@@ -6,23 +6,20 @@ import {
 } from 'lucide-react';
 import TopElement from '../Components/Globe';
 
-
-
-
 const LandingPage = ({onGetStarted}) => {
   return (
-    <div className="min-h-screen bg-gray-950 text-white font-sans selection:bg-blue-500 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-blue-500 selection:text-white overflow-x-hidden">
       
       {/* ----------------------------------------------------
           NAVBAR
       ----------------------------------------------------- */}
-      <nav className="fixed w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+      <nav className="fixed w-full z-50 bg-black backdrop-blur-md border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             
             {/* Logo */}
             <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-lg group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300">
+              <div className="bg-linear-to-br from-blue-600 to-indigo-600 p-2 rounded-lg group-hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300">
                 <Zap className="h-5 w-5 text-white" fill="currentColor" />
               </div>
               <span className="text-2xl font-bold tracking-tight text-white">
@@ -51,7 +48,7 @@ const LandingPage = ({onGetStarted}) => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 border border-gray-700 text-blue-400 text-xs font-bold uppercase tracking-wide mb-8 hover:border-blue-500/50 transition-colors cursor-default">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black border border-gray-700 text-blue-400 text-xs font-bold uppercase tracking-wide mb-8 hover:border-blue-500/50 transition-colors cursor-default">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -61,7 +58,7 @@ const LandingPage = ({onGetStarted}) => {
           
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
             Build a Team That <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 animate-pulse">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 animate-pulse">
               Lasts Forever.
             </span>
           </h1>
@@ -88,8 +85,8 @@ const LandingPage = ({onGetStarted}) => {
           Use the 'animate-scroll' class defined in index.css
       ----------------------------------------------------- */}
       <div className="w-full bg-black/50 border-y border-gray-800 py-8 overflow-hidden relative">
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-gray-950 to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-gray-950 to-transparent z-10" />
+        <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-gray-950 to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-gray-950 to-transparent z-10" />
         
         <div className="flex w-[200%] animate-scroll hover:[animation-play-state:paused]">
           {/* Double the list for seamless loop */}
